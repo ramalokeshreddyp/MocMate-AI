@@ -5,6 +5,7 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useAuth } from "@/context/AuthContext";
 import { useThemeMode } from "@/context/ThemeContext";
+import MocMateLogo from "@/components/MocMateLogo";
 
 const navItems = [
   { label: "Dashboard", icon: LayoutDashboard, path: "/dashboard" },
@@ -27,7 +28,7 @@ const DashboardLayout = ({ children }: { children: ReactNode }) => {
   return (
     <div className="flex min-h-screen bg-background">
       <header className="md:hidden fixed top-0 left-0 right-0 z-50 h-14 px-4 border-b border-border bg-card flex items-center justify-between">
-        <span className="font-semibold text-foreground">MocMate AI</span>
+        <MocMateLogo height={28} />
         <div className="flex items-center gap-2">
           <button
             onClick={() => void toggleTheme()}
@@ -58,19 +59,12 @@ const DashboardLayout = ({ children }: { children: ReactNode }) => {
       <motion.aside
         animate={{ width: collapsed ? 72 : 256 }}
         transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] as const }}
-        className={`fixed left-0 top-0 h-full border-r border-border bg-card z-50 flex flex-col transition-transform duration-300 ${
-          mobileOpen ? "translate-x-0" : "-translate-x-full md:translate-x-0"
-        }`}
+        className={`fixed left-0 top-0 h-full border-r border-border bg-card z-50 flex flex-col transition-transform duration-300 ${mobileOpen ? "translate-x-0" : "-translate-x-full md:translate-x-0"
+          }`}
       >
         {/* Logo */}
         <div className="h-16 flex items-center px-4 border-b border-border">
-          <AnimatePresence>
-            {!collapsed && (
-              <motion.span initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className="ml-2 text-lg font-bold text-foreground whitespace-nowrap">
-                MocMate AI
-              </motion.span>
-            )}
-          </AnimatePresence>
+          <MocMateLogo height={32} />
         </div>
 
         {/* Nav */}
@@ -82,11 +76,10 @@ const DashboardLayout = ({ children }: { children: ReactNode }) => {
                 key={item.path}
                 to={item.path}
                 onClick={() => setMobileOpen(false)}
-                className={`flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-medium transition-all duration-200 ${
-                  isActive
-                    ? "bg-primary/10 text-primary"
-                    : "text-muted-foreground hover:text-foreground hover:bg-secondary"
-                }`}
+                className={`flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-medium transition-all duration-200 ${isActive
+                  ? "bg-primary/10 text-primary"
+                  : "text-muted-foreground hover:text-foreground hover:bg-secondary"
+                  }`}
               >
                 <item.icon className="h-5 w-5 shrink-0" />
                 <AnimatePresence>

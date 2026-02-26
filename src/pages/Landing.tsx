@@ -1,7 +1,8 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
-import { Brain, Target, Shield, BarChart3, ArrowRight, Sparkles, Code, Users, FileText } from "lucide-react";
+import { Target, Shield, BarChart3, ArrowRight, Sparkles, Code, Users, FileText, Brain } from "lucide-react";
 import heroBg from "@/assets/hero-bg.jpg";
+import MocMateLogo from "@/components/MocMateLogo";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 30 },
@@ -32,9 +33,8 @@ const Landing = () => {
       {/* Nav */}
       <nav className="fixed top-0 w-full z-50 glass border-b border-border/50">
         <div className="container mx-auto px-6 h-16 flex items-center justify-between">
-          <Link to="/" className="flex items-center gap-2">
-            <Brain className="h-7 w-7 text-primary" />
-            <span className="text-lg font-bold text-foreground">MocMate AI</span>
+          <Link to="/">
+            <MocMateLogo height={34} />
           </Link>
           <div className="flex items-center gap-3">
             <Link to="/login" className="px-4 py-2 text-sm text-muted-foreground hover:text-foreground transition-colors">
@@ -53,7 +53,7 @@ const Landing = () => {
           <img src={heroBg} alt="" className="w-full h-full object-cover" />
         </div>
         <div className="absolute inset-0 bg-gradient-to-b from-background/50 via-background/80 to-background" />
-        
+
         <div className="relative container mx-auto text-center max-w-4xl">
           <motion.div initial="hidden" animate="visible" className="space-y-6">
             <motion.div variants={fadeUp} custom={0} className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-primary/20 bg-primary/5 text-primary text-sm">
@@ -165,10 +165,7 @@ const Landing = () => {
       {/* Footer */}
       <footer className="py-8 px-6 border-t border-border">
         <div className="container mx-auto flex items-center justify-between text-sm text-muted-foreground">
-          <div className="flex items-center gap-2">
-            <Brain className="h-4 w-4 text-primary" />
-            <span>MocMate AI</span>
-          </div>
+          <MocMateLogo height={22} />
           <span>© 2026 MocMate AI. All rights reserved.</span>
         </div>
       </footer>

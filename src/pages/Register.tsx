@@ -1,7 +1,8 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import { Brain, Mail, Lock, User, Eye, EyeOff, ArrowRight } from "lucide-react";
+import { Mail, Lock, User, Eye, EyeOff, ArrowRight } from "lucide-react";
+import MocMateLogo from "@/components/MocMateLogo";
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "@/context/AuthContext";
 import { toast } from "sonner";
@@ -68,7 +69,7 @@ const Register = () => {
       <div className="hidden lg:flex lg:w-1/2 relative items-center justify-center p-12">
         <div className="absolute inset-0 bg-gradient-primary opacity-5" />
         <motion.div initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.6 }} className="relative max-w-md">
-          <Brain className="h-16 w-16 text-primary mb-8" />
+          <MocMateLogo height={52} className="mb-8" />
           <h1 className="text-4xl font-bold mb-4">Join <span className="text-gradient">MocMate AI</span></h1>
           <p className="text-muted-foreground text-lg">Start your journey to interview mastery. Practice with AI, get real-time feedback, and improve every session.</p>
         </motion.div>
@@ -76,9 +77,8 @@ const Register = () => {
 
       <div className="w-full lg:w-1/2 flex items-center justify-center p-6">
         <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }} className="w-full max-w-md">
-          <div className="lg:hidden flex items-center gap-2 mb-8">
-            <Brain className="h-8 w-8 text-primary" />
-            <span className="text-xl font-bold">HireSense AI</span>
+          <div className="lg:hidden mb-8">
+            <MocMateLogo height={34} />
           </div>
 
           <h2 className="text-2xl font-bold mb-1">Create account</h2>
