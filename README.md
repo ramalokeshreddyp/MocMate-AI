@@ -171,6 +171,6 @@ hackathon/
 - Ensure TLS-enabled environment and secure `JWT_SECRET`.
 - Use environment variable `VITE_API_URL` for frontend-backend routing in hosted setup.
 - Verify camera/microphone permissions in production domain (HTTPS required for media APIs).
-- For Render-only deployment (single web service + database), see [DEPLOY_RENDER.md](DEPLOY_RENDER.md).
+
 
 

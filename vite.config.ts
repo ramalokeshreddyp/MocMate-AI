@@ -10,8 +10,6 @@ export default defineConfig(({ mode }) => ({
     allowedHosts: [
       "localhost",
       "127.0.0.1",
-      "team-code-zenith.onrender.com",
-      ".onrender.com",
     ],
     hmr: {
       overlay: false,
